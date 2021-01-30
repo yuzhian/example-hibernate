@@ -18,6 +18,12 @@
         <property name="format_sql">true</property>
         <property name="hbm2ddl.auto">update</property>
 
-        <mapping class="single.Person"/>
+        <mapping class="o.Person"/>
+        <mapping class="oo.Book"/>
+        <mapping class="oo.Detail"/>
+        <mapping class="om.Department"/>
+        <mapping class="om.Employee"/>
+        <mapping class="mm.User"/>
+        <mapping class="mm.Role"/>
     </session-factory>
 </hibernate-configuration>

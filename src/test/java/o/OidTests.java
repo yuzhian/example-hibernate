@@ -1,4 +1,4 @@
-package single;
+package o;
 
 import factory.HibernateFactory;
 import org.hibernate.Session;
@@ -6,13 +6,14 @@ import org.hibernate.Transaction;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import utils.ObjectMapperHolder;
 
 import java.time.LocalDate;
 
 /**
  * @author yuzhian
  */
-public class Tests {
+public class OidTests {
     private Session session;
     private Transaction tx;
 
@@ -52,14 +53,14 @@ public class Tests {
     public void get() {
         Person person = session.get(Person.class, 1);
         // breakpoint
-        System.out.println(person.getId() + " : " + person.getName() + " : " + person.getBirthday());
+        ObjectMapperHolder.printValueAsString(person);
     }
 
     @Test
     public void load() {
         Person person = session.load(Person.class, 1);
         // breakpoint
-        System.out.println(person.getId() + " : " + person.getName() + " : " + person.getBirthday());
+        ObjectMapperHolder.printValueAsString(person);
     }
 
     @Test
